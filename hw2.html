@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    
+<title>2090 - I2P(I)2020_Hu_hw1</title>
+
+    <!-- bootstrap, bootwatch CSS -->
+    
+    <link rel="stylesheet" href="/static/bootswatch/cerulean/bootstrap.min.css">
+    
+    <!-- Magnific Popup core CSS -->
+    <link rel="stylesheet" href=/static/magnific-popup/dist/magnific-popup.css>
+    <link rel="stylesheet" href=/static/css/index.css media="screen">
+    <link rel="stylesheet" href=/static/css/mfp-fade.css media="screen">
+    <script src=/static/jquery/dist/jquery.min.js></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-inverse newbar" >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">NTHU Online Judge</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="nav-text"><a href="/contest/">Contest</a></li>
+            <li class="nav-text"><a href="/problem/">Problem</a></li>
+            <li class="nav-text"><a href="/users/submit/">Submit</a></li>
+            <li class="nav-text"><a href="/status/?username=">Status</a></li>
+            <!--li class="nav-text"><a href="/group/list/">Group</a></li-->
+            <!--
+            <li class="dropdown nav-text">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                 role="button" aria-expanded="false">User
+                 <span class="caret"></span>
+               </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">User List</a></li>
+                <li><a href="#">User Rank</a></li>
+              </ul>
+            </li>
+            -->
+            <li class="nav-text">
+              <form class="navbar-form">
+                <div class="form-group">
+                  <input id="globalNavigation" type="text" class="form-control" placeholder="Search Site">
+                </div>
+              </form>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            
+            
+            <li class="nav-text-auth"><a href="/users/login/?next=/contest/2090/">Login</a></li>
+            <li class="nav-text-auth"><a href="/users/create/">Register</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- wrap all page elements to div -->
+    <div class="wrap-body container-fluid">
+      
+
+      
+
+<body onload="getRestTime()">
+  <div class="container">
+
+    <!--Title-->
+    <div class="well">
+      <h2>2090 - I2P(I)2020_Hu_hw1
+        <a class="btn btn-info" href="/contest/scoreboard/2090/">Scoreboard</a>
+        
+        
+      </h2>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h1 class="panel-title" style="text-align:center;">Time</h1>
+      </div>
+      <div class="panel-body inline">
+        <table style="width:100%;text-align:center;">
+          <tr>
+            <td id="start" style="text-align:left;">2020/09/21 17:20:00</td>
+            <td id="clock"></td>
+            <td id="end" style="text-align:right;">2020/09/28 18:00:00</td>
+          </tr>
+        </table>
+      </div>
+      <div class="progress" style="margin-left:5%;width:90%;">
+        <div id="timeline" class="progress-bar progress-bar-info" role="progressbar"
+        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    </div>
+    <!-- Clarification -->
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h1 class="panel-title" style="text-align:center;">Clarification</h1>
+      </div>
+      <div id="contest_clarification">
+        <table class="table" style="table-layout: fixed; width: 100%">
+          <thead>
+            <tr>
+              
+              <th width="2%">#</th>
+              <th width="15%">Problem</th>
+              <th width="10%">Asker</th>
+              <th width="20%">Description</th>
+              <th width="20%">Reply</th>
+              <th width="10%">Replier</th>
+              <th width="10%">Reply Time</th>
+              <th width="10%">For all team</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+
+        <div align="center">
+          
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!--Contest detail-->
+    <div id="detail">
+      <ul class="nav nav-tabs" role="tablist" id="contest_tab">
+        <li class="active" role="presentation">
+          <a href="#overview" role="tab" data-toggle="tab">Overview</a>
+        </li>
+        <li class="dropdown" role="presentation">
+          <a href="#problem" class="dropdown-toggle" data-toggle="dropdown">
+            Problem<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            
+            <li role="presentation">
+              <a href="#problem12365" tabindex="-1" role="tab"
+               data-toggle="tab">A Cute Jade Rabbit</a>
+            </li>
+            
+            <li role="presentation">
+              <a href="#problem12870" tabindex="-1" role="tab"
+               data-toggle="tab">Simple calculator</a>
+            </li>
+            
+            <li role="presentation">
+              <a href="#problem12871" tabindex="-1" role="tab"
+               data-toggle="tab">Baby Password 2</a>
+            </li>
+            
+          </ul>
+        </li>
+      </ul>
+      <div class="tab-content" id="content">
+        <div class="tab-pane active" id="overview">
+            
+<link href="/static/contest/css/overview.css" rel="stylesheet">
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Problem</th>
+      <th>Pass Rate (passed user / total user)</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>12365</td>
+      <td>
+        <a href="#problem12365" class="overview_problem"
+           tabindex="-1" role="tab" data-toggle="tab">A Cute Jade Rabbit</a>
+      </td>
+      <td>
+        
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" 
+               style="width: %;"
+               data-toggle="tooltip" data-placement="top" 
+               title="%">
+          </div>
+          <div class="progress-bar progress-bar-danger" 
+               style="width: %;"
+               data-toggle="tooltip" data-placement="top" 
+               title="%">
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>12870</td>
+      <td>
+        <a href="#problem12870" class="overview_problem"
+           tabindex="-1" role="tab" data-toggle="tab">Simple calculator</a>
+      </td>
+      <td>
+        
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" 
+               style="width: %;"
+               data-toggle="tooltip" data-placement="top" 
+               title="%">
+          </div>
+          <div class="progress-bar progress-bar-danger" 
+               style="width: %;"
+               data-toggle="tooltip" data-placement="top" 
+               title="%">
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>12871</td>
+      <td>
+        <a href="#problem12871" class="overview_problem"
+           tabindex="-1" role="tab" data-toggle="tab">Baby Password 2</a>
+      </td>
+      <td>
+        
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" 
+               style="width: %;"
+               data-toggle="tooltip" data-placement="top" 
+               title="%">
+          </div>
+          <div class="progress-bar progress-bar-danger" 
+               style="width: %;"
+               data-toggle="tooltip" data-placement="top" 
+               title="%">
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+        </div>
+        
+        <div class="tab-pane" id="problem12365">
+          
+<div class="pname_block panel">
+  <div class="left">
+    <div class="pname">
+      <h2>12365 - A Cute Jade Rabbit &nbsp;&nbsp;
+        
+      </h2>
+    </div>
+  </div>
+  <div class="right">
+    <div class="problem-option">
+      <a href="/status/?pid=12365">Status</a> &nbsp;|&nbsp;
+      <!-- <a>Printable </a> &nbsp;|&nbsp; -->
+      <!-- <a>Rank</a> &nbsp;|&nbsp; -->
+      <a data-toggle='modal' data-target='#limit_12365'>Limits</a>
+      
+        <a class="btn btn-primary" href="/users/submit/12365">Submit</a>
+      
+    </div>
+  </div>
+</div>
+
+<div class='modal fade' id='limit_12365'>
+  <div class='modal-dialog modal-sm'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal'>
+          <span aria-hidden='true'>&times;</span>
+          <span class='sr-only'>Close</span>
+        </button>
+        <h4 class='modal-title'>Limits</h4>
+      </div>
+      <div class='modal-body'>
+        <table class='table'>
+          <tbody>
+            <tr>
+              <td></td>
+              <th>Time</th>
+              <th>Memory</th>
+              
+              <tr>
+                <th>Case 1</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="width:75%; float:left">
+  <h3>Description</h3>
+  <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/5/54/Rabbit_in_the_moon_standing_by_pot.png" style="height:244px; width:250px" /></p>
+
+<p><span style="color:rgb(34, 34, 34); font-family:sans-serif; font-size:14px">The Jade Rabbit, also called the Moon Rabbit, is a rabbit that lives on the moon. In Chinese folklore, it is often portrayed as a companion of the moon goddess Chang&#39;s</span><span style="color:rgb(34, 34, 34); font-family:sans-serif; font-size:14px">, constantly pounding the elixir of life for her.</span></p>
+
+<p><span style="color:rgb(34, 34, 34); font-family:sans-serif; font-size:14px">In this assignment, your need to draw a cute jade rabbit with ascii text like sample output.</span></p>
+
+<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;">
+<p>&nbsp;(\&nbsp; &nbsp;/)<br />
+&nbsp;( ^&nbsp; ^)<br />
+c(&quot;&quot;)(&quot;&quot;)</p>
+</div>
+
+<p>This rabbit&nbsp;is made up of three lines :</p>
+
+<div>
+<div class="&lt;code&gt;" lang="c">
+<div lang="c" style="code">
+<p>The first line includes 4&nbsp;whitespace , a&nbsp;pair of brackets&nbsp;(<span style="font-family:monospace"><span style="background-color:#FFF0F5">()</span></span>),&nbsp;1&nbsp;left slash&nbsp;(<span style="background-color:rgb(255, 240, 245)">\</span>) and 1 right slash (<span style="background-color:#FFF0F5">/</span>).</p>
+</div>
+</div>
+</div>
+
+<p>The second line includes 4&nbsp;whitespace, a pair of brackets (<code><span style="background-color:#FFF0F5">()</span></code>), 2&nbsp;<span style="color:rgb(85, 85, 85); font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px">carets&nbsp;</span>(<span style="background-color:#FFF0F5">^</span>).</p>
+
+<p>The third line includes 1 lower caser case c letter (<span style="background-color:#FFF0F5">c</span>),&nbsp;two&nbsp;pair of brackets (<code><span style="background-color:#FFF0F5">()</span></code>)&nbsp; and 4 quotation marks (<code><span style="background-color:#FFF0F5">&quot;</span></code>).</p>
+
+<p><strong>Remember to put a new line character in the end of each line.</strong></p>
+
+<p><strong><img alt="" src="/media/uploads/2019/09/13/rabbit.png" style="height:115px; width:160px" /></strong></p>
+
+<p>(gray dots represents whitespace characters)</p>
+
+<p><strong>Very Important Notes</strong></p>
+
+<ul>
+	<li>
+	<p>Getting compile error? Having problem printing quotation mark (<code><span style="background-color:#FFF0F5">&quot;</span></code>)? Maybe&nbsp;<a href="https://stackoverflow.com/questions/11772291/how-can-i-print-a-quotation-mark-in-c" style="box-sizing: border-box; background-color: transparent; color: rgb(65, 131, 196); text-decoration-line: none; cursor: pointer; -webkit-user-drag: none;">this link</a>&nbsp;can help you.</p>
+	</li>
+	<li>
+	<p>Getting Wrong Answer? Make sure you don&#39;t miss any whitespace&nbsp;(<code><span style="background-color:#FFF0F5">&nbsp;</span></code>)&nbsp;or new line (<code><span style="background-color:#FFF0F5">\n</span></code>) character.</p>
+	</li>
+</ul>
+
+  <h3>Input</h3>
+  <p><span style="color:rgb(85, 85, 85); font-family:open sans,clear sans,helvetica neue,helvetica,arial,sans-serif; font-size:16px">This is no input for this problem.</span></p>
+
+  <h3>Output</h3>
+  <p><span style="color:rgb(85, 85, 85); font-family:open sans,clear sans,helvetica neue,helvetica,arial,sans-serif; font-size:16px">Print the rabbit&nbsp;in the problem description.</span></p>
+
+  <h3>Sample Input&nbsp;&nbsp;<a class='btn btn-primary downloadSampleInputButton' pid='12365'>Download</a></h3>
+  <div class='panel-body'>
+    <textarea id='12365_sampleIn' class='panel-body sampleIO' readonly></textarea>
+  </div>
+  <h3>Sample Output&nbsp;&nbsp;<a class='btn btn-primary downloadSampleOutputButton' pid='12365'>Download</a></h3>
+  <div class='panel-body'>
+    <textarea id='12365_sampleOut' class='panel-body sampleIO' readonly>  (\   /)
+  ( ^  ^)
+ c(&quot;&quot;)(&quot;&quot;)
+</textarea>
+  </div>
+  
+  
+  
+
+  <br>
+  <br>
+  <br>
+  <h4>
+    <a onclick="alert('Discuss not open yet')">Discuss</a>
+  </h4>
+  <br>
+  <br>
+  <br>
+</div>
+<script>
+var pid = 12365;
+</script>
+<script src="/static/problem/js/problem.js"></script>
+
+
+        </div>
+        
+        <div class="tab-pane" id="problem12870">
+          
+<div class="pname_block panel">
+  <div class="left">
+    <div class="pname">
+      <h2>12870 - Simple calculator &nbsp;&nbsp;
+        
+      </h2>
+    </div>
+  </div>
+  <div class="right">
+    <div class="problem-option">
+      <a href="/status/?pid=12870">Status</a> &nbsp;|&nbsp;
+      <!-- <a>Printable </a> &nbsp;|&nbsp; -->
+      <!-- <a>Rank</a> &nbsp;|&nbsp; -->
+      <a data-toggle='modal' data-target='#limit_12870'>Limits</a>
+      
+        <a class="btn btn-primary" href="/users/submit/12870">Submit</a>
+      
+    </div>
+  </div>
+</div>
+
+<div class='modal fade' id='limit_12870'>
+  <div class='modal-dialog modal-sm'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal'>
+          <span aria-hidden='true'>&times;</span>
+          <span class='sr-only'>Close</span>
+        </button>
+        <h4 class='modal-title'>Limits</h4>
+      </div>
+      <div class='modal-body'>
+        <table class='table'>
+          <tbody>
+            <tr>
+              <td></td>
+              <th>Time</th>
+              <th>Memory</th>
+              
+              <tr>
+                <th>Case 1</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 2</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 3</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 4</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 5</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 6</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 7</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="width:75%; float:left">
+  <h3>Description</h3>
+  <p>Howard, a freshman major in computer science, has an idea after learning arithmetic operator in the programming course. He wants to write a C++ program to make a simple calculator. He had&nbsp;tried&nbsp;around the clock but ended up&nbsp;realizing&nbsp;that&nbsp;it is not as easy as he have&nbsp;expected. So he asks you for help to write a program&nbsp;that can do simple calculation.</p>
+
+  <h3>Input</h3>
+  <p>Input contains&nbsp;two real numbers&nbsp;a, b (0 &lt;= a, b &lt;&nbsp;1000, up to three decimal places) and one&nbsp;arithmetic operator(+, -, *, /) in the middle.</p>
+
+  <h3>Output</h3>
+  <p>Print the answer of the calculation. That is,&nbsp;</p>
+
+<ul>
+	<li>If the operation is &quot;+&quot;, print a plus b.</li>
+	<li>If the operation is &quot;-&quot;, print a minus b.</li>
+	<li>If the operation is &quot;*&quot;, print a times b.</li>
+	<li>If the operation is &quot;/&quot;, print a divided by b.</li>
+</ul>
+
+<p>Print the number with exactly three&nbsp;digits after the decimal points that rounds to the third&nbsp;decimal place.<br />
+If the answer is illegal, that is divided by zero, print &quot;<strong>Error</strong>&quot;. (Without&nbsp;<span style="color:rgb(77, 81, 86); font-family:arial,sans-serif; font-size:14px">quotation marks</span>)</p>
+
+<p>Remember to print a newline character &#39;\n&#39; at the end.</p>
+
+<p>Use <strong>double</strong> instead of <strong>float</strong> to prevent from floating point precision error.</p>
+
+  <h3>Sample Input&nbsp;&nbsp;<a class='btn btn-primary downloadSampleInputButton' pid='12870'>Download</a></h3>
+  <div class='panel-body'>
+    <textarea id='12870_sampleIn' class='panel-body sampleIO' readonly>1.8/3.76</textarea>
+  </div>
+  <h3>Sample Output&nbsp;&nbsp;<a class='btn btn-primary downloadSampleOutputButton' pid='12870'>Download</a></h3>
+  <div class='panel-body'>
+    <textarea id='12870_sampleOut' class='panel-body sampleIO' readonly>0.479</textarea>
+  </div>
+  
+  
+  
+
+  <br>
+  <br>
+  <br>
+  <h4>
+    <a onclick="alert('Discuss not open yet')">Discuss</a>
+  </h4>
+  <br>
+  <br>
+  <br>
+</div>
+<script>
+var pid = 12870;
+</script>
+<script src="/static/problem/js/problem.js"></script>
+
+
+        </div>
+        
+        <div class="tab-pane" id="problem12871">
+          
+<div class="pname_block panel">
+  <div class="left">
+    <div class="pname">
+      <h2>12871 - Baby Password 2 &nbsp;&nbsp;
+        
+      </h2>
+    </div>
+  </div>
+  <div class="right">
+    <div class="problem-option">
+      <a href="/status/?pid=12871">Status</a> &nbsp;|&nbsp;
+      <!-- <a>Printable </a> &nbsp;|&nbsp; -->
+      <!-- <a>Rank</a> &nbsp;|&nbsp; -->
+      <a data-toggle='modal' data-target='#limit_12871'>Limits</a>
+      
+        <a class="btn btn-primary" href="/users/submit/12871">Submit</a>
+      
+    </div>
+  </div>
+</div>
+
+<div class='modal fade' id='limit_12871'>
+  <div class='modal-dialog modal-sm'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal'>
+          <span aria-hidden='true'>&times;</span>
+          <span class='sr-only'>Close</span>
+        </button>
+        <h4 class='modal-title'>Limits</h4>
+      </div>
+      <div class='modal-body'>
+        <table class='table'>
+          <tbody>
+            <tr>
+              <td></td>
+              <th>Time</th>
+              <th>Memory</th>
+              
+              <tr>
+                <th>Case 1</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 2</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 3</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 4</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 5</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 6</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 7</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 8</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+              <tr>
+                <th>Case 9</th>
+                <td>1 sec</td>
+                <td>32 MB</td>
+              </tr>
+              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="width:75%; float:left">
+  <h3>Description</h3>
+  <p>You are a hacker in babyland.</p>
+
+<p>In babyland, people set their passwords as their favorite uppercase character.</p>
+
+<p>In order to prevent a &quot;hacker&quot; like you from stealing passwords by peeking at the database, the passwords are shifted by some integer (possibly zero or negative) and then <strong>changed the case</strong>&nbsp;before being stored.</p>
+
+<p>For example, if the original password is the character &#39;A&#39;, then after shifting by &#39;+2&#39; and&nbsp;changing the case,&nbsp;the actual password recorded on the database will be the second character after &#39;A&#39;, which is &#39;c&#39;.</p>
+
+<p>Note that we will be dealing the alphabetic sequence as if it is a cycle, i.e., the letter before &#39;A&#39; is &#39;Z&#39;, and the letter after &#39;Z&#39; is &#39;A&#39;.</p>
+
+<p>Hence, if the original password is the character &#39;a&#39;, and the shift is &#39;-1&#39;, the new password will be &#39;Z&#39;.</p>
+
+<p>You have stolen the shifted password stored on the database, denoted as<strong><em>&nbsp;</em></strong><strong><em>C</em></strong>.</p>
+
+<p>You also know the shift that had been applied to the original password, denoted as&nbsp;<em><strong>D.</strong></em></p>
+
+<p>Show the original password, followed by a newline character.</p>
+
+<p><u><strong>Note: Be aware of char overflow.</strong></u></p>
+
+<p>&nbsp;</p>
+
+  <h3>Input</h3>
+  <p>C D</p>
+
+<p>&nbsp;</p>
+
+<p>(Note that C may be uppercase or lowercase&nbsp;character,&nbsp;D may be in form &quot;-X&quot; or &quot;+X&quot;, where X is an integer between 0 and 25)</p>
+
+  <h3>Output</h3>
+  <p>The original password, with a trailing newline character.</p>
+
+  <h3>Sample Input&nbsp;&nbsp;<a class='btn btn-primary downloadSampleInputButton' pid='12871'>Download</a></h3>
+  <div class='panel-body'>
+    <textarea id='12871_sampleIn' class='panel-body sampleIO' readonly>A +1</textarea>
+  </div>
+  <h3>Sample Output&nbsp;&nbsp;<a class='btn btn-primary downloadSampleOutputButton' pid='12871'>Download</a></h3>
+  <div class='panel-body'>
+    <textarea id='12871_sampleOut' class='panel-body sampleIO' readonly>z</textarea>
+  </div>
+  
+  
+  
+
+  <br>
+  <br>
+  <br>
+  <h4>
+    <a onclick="alert('Discuss not open yet')">Discuss</a>
+  </h4>
+  <br>
+  <br>
+  <br>
+</div>
+<script>
+var pid = 12871;
+</script>
+<script src="/static/problem/js/problem.js"></script>
+
+
+        </div>
+        
+        <!-- <div class="tab-pane" id="scoreboard">
+        </div> -->
+      </div>
+    </div>
+    
+    
+  </div>
+</body>
+
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="navbar navbar-inverse navbar-fixed-bottom sticky-footer container-fluid">
+        <div class="navbar-collapse collapse">
+          <p class="navbar-text col-lg-4">Contact us: nthucsoj@gmail.com</p>
+          <p class="navbar-text col-lg-6">© NTHU Online Judge 2015, Templates are from Bootswatch Project</p>
+          <p id="time" class="navbar-text">2020/09/22 23:43:07</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src=/static/bootstrap/dist/js/bootstrap.min.js></script>
+    <script src=/static/js/function.js></script>
+    <script src=/static/magnific-popup/dist/jquery.magnific-popup.min.js></script>
+    
+
+<script type="text/javascript">
+jQuery(function($) {
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+    }
+});
+});
+</script>
+
+
+<script type="text/javascript" src="/static/autocomplete_light/django_admin.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/autocomplete.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/widget.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/addanother.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/text_widget.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/remote.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/autocomplete_light/style.css" />
+
+    <script src=/static/js/popup-setting.js></script>
+    <script src=/static/js/base.js></script>
+    <script src=/static/js/clock.js></script>
+    
+<link href="/static/contest/css/contest.css" rel="stylesheet">
+<link href="/static/problem/css/problem.css" rel="stylesheet">
+<script src="/static/contest/js/contest.js"></script>
+
+  </body>
+</html>
